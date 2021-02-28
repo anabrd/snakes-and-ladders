@@ -5,7 +5,7 @@ html {
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;    
+    box-sizing: border-box;
 }
 
 body,
@@ -13,18 +13,18 @@ main,
 button,
 input,
 select {
-font-family: 'Raleway',
-sans-serif;
+    font-family: 'Raleway',
+        sans-serif;
 }
 
 body {
     height: 100vh;
     text-align: center;
     position: relative;
-background: radial-gradient(50% 50% at 50% 50%, #FFFFFF 0%, rgba(255, 202, 202, 0) 33.33%, rgba(232, 203, 203, 0.51) 100%);
+    background: radial-gradient(50% 50% at 50% 50%, #FFFFFF 0%, rgba(255, 202, 202, 0) 33.33%, rgba(232, 203, 203, 0.51) 100%);
 }
 
-header > img {
+header>img {
     width: 5%;
     margin: auto -20px;
     z-index: -1;
@@ -53,23 +53,23 @@ button:hover {
 h1 {
     color: white;
     font-family: 'Fredoka One',
-    cursive;
+        cursive;
     font-size: 5vh;
-text-shadow: 0 1px 0 hsl(0, 14%, 78%),
-0 2px 0 hsl(0, 5%, 75%),
-0 3px 0 hsl(0, 5%, 70%),
-0 4px 0 hsl(0, 5%, 66%),
-0 5px 0 hsl(0, 5%, 64%),
-0 6px 0 hsl(0, 5%, 62%),
-0 7px 0 hsl(0, 5%, 61%),
-0 8px 0 hsl(0, 5%, 60%),
+    text-shadow: 0 1px 0 hsl(0, 14%, 78%),
+        0 2px 0 hsl(0, 5%, 75%),
+        0 3px 0 hsl(0, 5%, 70%),
+        0 4px 0 hsl(0, 5%, 66%),
+        0 5px 0 hsl(0, 5%, 64%),
+        0 6px 0 hsl(0, 5%, 62%),
+        0 7px 0 hsl(0, 5%, 61%),
+        0 8px 0 hsl(0, 5%, 60%),
 
-0 0 5px rgba(0, 0, 0, .05),
-0 1px 3px rgba(0, 0, 0, .2),
-0 3px 5px rgba(0, 0, 0, .2),
-0 5px 10px rgba(0, 0, 0, .2),
-0 10px 10px rgba(0, 0, 0, .2),
-0 20px 20px rgba(0, 0, 0, .3);
+        0 0 5px rgba(0, 0, 0, .05),
+        0 1px 3px rgba(0, 0, 0, .2),
+        0 3px 5px rgba(0, 0, 0, .2),
+        0 5px 10px rgba(0, 0, 0, .2),
+        0 10px 10px rgba(0, 0, 0, .2),
+        0 20px 20px rgba(0, 0, 0, .3);
 }
 
 #heading-main {
@@ -87,7 +87,7 @@ ul {
     padding: 5%;
 }
 
-ul > li > img {
+ul>li>img {
     width: 5vw;
 }
 
@@ -122,7 +122,7 @@ a:hover {
     }
 }
 
-ul > li > img:hover {
+ul>li>img:hover {
     transform: translateY(-5px);
 }
 
@@ -141,7 +141,8 @@ ul > li > img:hover {
     margin-top: 5%;
 }
 
-label, input {
+label,
+input {
     display: block;
     margin: 2% auto;
 }
@@ -158,7 +159,7 @@ input {
 input:focus {
     background-color: #F1FFF8;
     transition: 0.2s;
-    outline:none;
+    outline: none;
 }
 
 
@@ -181,7 +182,7 @@ footer {
     bottom: 1%;
 }
 
-footer > img {
+footer>img {
     width: 15vw;
 }
 
@@ -225,6 +226,61 @@ main {
     justify-content: space-evenly;
 }
 
+.arrow {
+    position: absolute;
+    z-index: 200;
+    width: 5vmin;
+}
+
+.arrow:nth-of-type(odd) {
+    right: -7%;
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+}
+
+.arrow:nth-of-type(even) {
+    left: -7%;
+}
+
+/* Arrows */
+
+#arrow1 {
+    bottom: 7%;
+}
+
+#arrow2 {
+    bottom: 17%;
+}
+
+#arrow3 {
+    bottom: 27%;
+}
+
+#arrow4 {
+    bottom: 37%;
+}
+
+#arrow5 {
+    bottom: 47%;
+}
+
+#arrow6 {
+    bottom: 57%;
+}
+
+#arrow7 {
+    bottom: 67%;
+}
+
+#arrow8 {
+    bottom: 77%;
+}
+
+
+
 /* Board */
 
 #board {
@@ -233,7 +289,8 @@ main {
     -webkit-box-shadow: 10px 17px 36px 0px rgba(0, 0, 0, 0.55);
     -moz-box-shadow: 10px 17px 36px 0px rgba(0, 0, 0, 0.55);
     box-shadow: 10px 17px 36px 0px rgba(0, 0, 0, 0.55);
-    }
+    position: relative
+}
 
 .row {
     display: flex;
@@ -251,7 +308,7 @@ main {
     font-size: 0.4em;
 }
 
-.pos > p {
+.pos>p {
     position: absolute;
     bottom: 8%;
     right: 8%;
@@ -267,7 +324,7 @@ main {
     background-color: white;
 }
 
-#pos0 > .piece {
+#pos0>.piece {
     position: initial;
 }
 
@@ -281,7 +338,8 @@ main {
     color: #F1FFF8;
 }
 
-.ladder, .snake {
+.ladder,
+.snake {
     position: absolute;
     width: 23vmin;
     filter: brightness(1.2);
@@ -411,7 +469,7 @@ main {
 #snake93-73 {
     position: absolute;
     z-index: 30;
-        margin-top: 20%;
+    margin-top: 20%;
     margin-left: -70%;
     width: 8vmin;
 }
@@ -445,5 +503,3 @@ main {
     left: 25vw;
     filter: grayscale(0%);
 }
-
-
