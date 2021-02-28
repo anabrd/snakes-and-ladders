@@ -1,5 +1,7 @@
 # Snakes and Ladders 🐍
 
+[Github Pages](https://anabrd.github.io/snakes-and-ladders/game.html)
+
 ## Practice
 - CSS typography, grid layout, positioning
 - DOM manipulation
