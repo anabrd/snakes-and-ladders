@@ -1,0 +1,449 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;    
+}
+
+body,
+main,
+button,
+input,
+select {
+font-family: 'Raleway',
+sans-serif;
+}
+
+body {
+    height: 100vh;
+    text-align: center;
+    position: relative;
+background: radial-gradient(50% 50% at 50% 50%, #FFFFFF 0%, rgba(255, 202, 202, 0) 33.33%, rgba(232, 203, 203, 0.51) 100%);
+}
+
+header > img {
+    width: 5%;
+    margin: auto -20px;
+    z-index: -1;
+}
+
+header {
+    padding: 1.2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    background-color: #844c53;
+    color: white;
+    border: none;
+    padding: 1.2vmin 6vmin;
+    margin: 2% auto;
+}
+
+button:hover {
+    background-color: #49292d;
+    transition: 0.2;
+}
+
+h1 {
+    color: white;
+    font-family: 'Fredoka One',
+    cursive;
+    font-size: 5vh;
+text-shadow: 0 1px 0 hsl(0, 14%, 78%),
+0 2px 0 hsl(0, 5%, 75%),
+0 3px 0 hsl(0, 5%, 70%),
+0 4px 0 hsl(0, 5%, 66%),
+0 5px 0 hsl(0, 5%, 64%),
+0 6px 0 hsl(0, 5%, 62%),
+0 7px 0 hsl(0, 5%, 61%),
+0 8px 0 hsl(0, 5%, 60%),
+
+0 0 5px rgba(0, 0, 0, .05),
+0 1px 3px rgba(0, 0, 0, .2),
+0 3px 5px rgba(0, 0, 0, .2),
+0 5px 10px rgba(0, 0, 0, .2),
+0 10px 10px rgba(0, 0, 0, .2),
+0 20px 20px rgba(0, 0, 0, .3);
+}
+
+#heading-main {
+    font-size: 3rem;
+}
+
+h2 {
+    margin-bottom: 2%;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-evenly;
+    padding: 5%;
+}
+
+ul > li > img {
+    width: 5vw;
+}
+
+a {
+    padding: 1.2vmin 6vmin;
+    margin: 2% auto;
+    background-color: #d69e92;
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: #86655e;
+    transition: 0.2s;
+}
+
+.animated {
+    animation: float 1.5s linear infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+ul > li > img:hover {
+    transform: translateY(-5px);
+}
+
+.title {
+    position: absolute;
+    top: 0;
+    left: 5;
+}
+
+#customize-players {
+    display: flex;
+    flex-direction: column;
+}
+
+.color {
+    margin-top: 5%;
+}
+
+label, input {
+    display: block;
+    margin: 2% auto;
+}
+
+input {
+    padding: 0.8% 1.2%;
+    font-size: 1.2rem;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border: none;
+    border-bottom: 2px solid #49292d;
+}
+
+input:focus {
+    background-color: #F1FFF8;
+    transition: 0.2s;
+    outline:none;
+}
+
+
+.player-card {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 4% auto;
+    padding: 3%;
+    background-color: white;
+    border-radius: 3px;
+    -webkit-box-shadow: 10px 17px 36px 0px rgba(0, 0, 0, 0.55);
+    -moz-box-shadow: 10px 17px 36px 0px rgba(0, 0, 0, 0.55);
+    box-shadow: 10px 17px 36px 0px rgba(0, 0, 0, 0.55);
+}
+
+footer {
+    position: absolute;
+    right: 5%;
+    bottom: 1%;
+}
+
+footer > img {
+    width: 15vw;
+}
+
+/**** INDEX STYLING END ****/
+
+/**** GAME STYLING START ****/
+
+.board-container {
+    height: 90vmin;
+    width: 90vmin;
+}
+
+#board,
+.side {
+    display: inline-block;
+}
+
+.side {
+    padding-top: 10%;
+    width: 30vmin;
+}
+
+.side:first-of-type {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.piece {
+    width: 5vmin;
+    position: absolute;
+    top: 0;
+    left: 5%;
+    z-index: 100;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    align-items: top;
+    justify-content: space-evenly;
+}
+
+/* Board */
+
+#board {
+    width: 80vmin;
+    height: 80vmin;
+    -webkit-box-shadow: 10px 17px 36px 0px rgba(0, 0, 0, 0.55);
+    -moz-box-shadow: 10px 17px 36px 0px rgba(0, 0, 0, 0.55);
+    box-shadow: 10px 17px 36px 0px rgba(0, 0, 0, 0.55);
+    }
+
+.row {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.row:nth-of-type(even) {
+    flex-direction: row-reverse;
+}
+
+.pos {
+    width: 8vmin;
+    height: 8vmin;
+    position: relative;
+    font-size: 0.4em;
+}
+
+.pos > p {
+    position: absolute;
+    bottom: 8%;
+    right: 8%;
+}
+
+#pos0 {
+    border-radius: 8px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 5% auto;
+    background-color: white;
+}
+
+#pos0 > .piece {
+    position: initial;
+}
+
+.pos:nth-of-type(odd) {
+    background-color: #F1FFF8;
+    color: #252726;
+}
+
+.pos:nth-of-type(even) {
+    background-color: #252726;
+    color: #F1FFF8;
+}
+
+.ladder, .snake {
+    position: absolute;
+    width: 23vmin;
+    filter: brightness(1.2);
+}
+
+/* Ladders */
+
+#ladder2-38 {
+    width: 20vmin;
+    margin-top: -280%;
+    margin-left: -60%;
+}
+
+#ladder5-14 {
+    margin-top: -130%;
+    margin-left: -32%;
+}
+
+#ladder9-31 {
+    width: 18vmin;
+    margin-top: -270%;
+    margin-left: -70%;
+}
+
+#ladder28-84 {
+    position: relative;
+    z-index: 10;
+    margin-top: -580%;
+    margin-left: -390%;
+    width: 39vmin;
+}
+
+#ladder36-44 {
+    position: relative;
+    z-index: 32;
+    margin-top: -80%;
+    margin-left: -92%;
+    width: 14vmin;
+}
+
+#ladder40-42 {
+    position: relative;
+    z-index: 30;
+    margin-top: -85%;
+    margin-left: 20%;
+    width: 12vmin;
+}
+
+#ladder51-67 {
+    position: relative;
+    z-index: 10;
+    margin-top: -130%;
+    margin-left: -300%;
+    width: 30vmin;
+}
+
+#ladder71-91 {
+    position: relative;
+    z-index: 30;
+    margin-top: -150%;
+    width: 8vmin;
+}
+
+#ladder80-100 {
+    position: relative;
+    z-index: 30;
+    margin-top: -160%;
+    width: 9vmin;
+}
+
+/* Snakes */
+
+#snake16-6 {
+    position: absolute;
+    z-index: 30;
+    margin-top: 20%;
+    margin-left: -20%;
+    width: 12vmin;
+}
+
+#snake47-26 {
+    position: absolute;
+    z-index: 30;
+    margin-top: 50%;
+    margin-left: -160%;
+    width: 21vmin;
+}
+
+#snake49-11 {
+    position: absolute;
+    z-index: 30;
+    margin-top: 30%;
+    margin-left: -100%;
+    width: 28vmin;
+}
+
+#snake56-53 {
+    position: absolute;
+    z-index: 30;
+
+    width: 23vmin;
+}
+
+#snake62-19 {
+    position: absolute;
+    z-index: 10;
+    margin-left: -120%;
+    width: 20vmin;
+}
+
+#snake64-60 {
+    position: absolute;
+    z-index: 31;
+    margin-top: 20%;
+    margin-left: -340%;
+    width: 28vmin;
+}
+
+#snake87-24 {
+    position: absolute;
+    z-index: 30;
+    margin-top: 30%;
+    margin-left: -380%;
+    width: 40vmin;
+}
+
+#snake93-73 {
+    position: absolute;
+    z-index: 30;
+        margin-top: 20%;
+    margin-left: -70%;
+    width: 8vmin;
+}
+
+#snake95-75 {
+    position: absolute;
+    margin-top: 23%;
+    z-index: 30;
+    margin-left: -50%;
+    width: 9vmin;
+}
+
+#snake98-78 {
+    position: absolute;
+    margin-top: 23%;
+    z-index: 30;
+    margin-left: -50%;
+    width: 9vmin;
+}
+
+
+#dice {
+    margin-top: 30%;
+    width: 50%;
+}
+
+#new-game {
+    position: absolute;
+    width: 50%;
+    top: 12vw;
+    left: 25vw;
+    filter: grayscale(0%);
+}
+
+

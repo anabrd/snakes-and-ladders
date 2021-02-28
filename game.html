@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snakes and Ladders!</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <script async type="module" src="./game.js"></script>
+</head>
+
+<body>
+    <header>
+        <img src="./assets/snake16-6.png" alt="Snake heading decoration">
+        <h1>SNAKES AND LADDERS!</h1>
+        <img src="./assets/ladder40-42.png" alt="">
+    </header>
+    <main>
+        <div class="side">
+            <h2 id="info"></h2>
+
+            <div id="start-container" class="player-card">
+                <p id="starting-point">Starting point:</p>
+                <div id="pos0" class="pos"></div>
+            </div>
+        </div>
+
+        <div id="board" class="content">
+            <div class="row">
+                <div id="pos100" class="pos"></div>
+                <div id="pos99" class="pos"></div>
+                <div id="pos98" class="pos"><img class="snake" id="snake98-78" src="./assets/snake98-78.png" alt="">
+                </div>
+                <div id="pos97" class="pos"></div>
+                <div id="pos96" class="pos"></div>
+                <div id="pos95" class="pos"><img class="snake" id="snake95-75" src="./assets/snake95-75.png" alt="">
+                </div>
+                <div id="pos94" class="pos"></div>
+                <div id="pos93" class="pos"><img class="snake" id="snake93-73" src="./assets/snake93-73.png" alt="">
+                </div>
+                <div id="pos92" class="pos"></div>
+                <div id="pos91" class="pos"></div>
+            </div>
+            <div class="row">
+                <div id="pos90" class="pos"></div>
+                <div id="pos89" class="pos"></div>
+                <div id="pos88" class="pos"></div>
+                <div id="pos87" class="pos"><img class="snake" id="snake87-24" src="./assets/snake87-24.png" alt="">
+                </div>
+                <div id="pos86" class="pos"></div>
+                <div id="pos85" class="pos"></div>
+                <div id="pos84" class="pos"></div>
+                <div id="pos83" class="pos"></div>
+                <div id="pos82" class="pos"></div>
+                <div id="pos81" class="pos"></div>
+            </div>
+            <div class="row">
+                <div id="pos80" class="pos"><img class="ladder" id="ladder80-100" src="./assets/ladder80-100.png"
+                        alt=""></div>
+                <div id="pos79" class="pos"></div>
+                <div id="pos78" class="pos"></div>
+                <div id="pos77" class="pos"></div>
+                <div id="pos76" class="pos"></div>
+                <div id="pos75" class="pos"></div>
+                <div id="pos74" class="pos"></div>
+                <div id="pos73" class="pos"></div>
+                <div id="pos72" class="pos"></div>
+                <div id="pos71" class="pos"><img class="ladder" id="ladder71-91" src="./assets/ladder71-91.png" alt="">
+                </div>
+            </div>
+            <div class="row">
+                <div id="pos70" class="pos"></div>
+                <div id="pos69" class="pos"></div>
+                <div id="pos68" class="pos"></div>
+                <div id="pos67" class="pos"></div>
+                <div id="pos66" class="pos"></div>
+                <div id="pos65" class="pos"></div>
+                <div id="pos64" class="pos"><img class="snake" id="snake64-60" src="./assets/snake64-60.png" alt="">
+                </div>
+                <div id="pos63" class="pos"></div>
+                <div id="pos62" class="pos"><img class="snake" id="snake62-19" src="./assets/snake62-19.png" alt="">
+                </div>
+                <div id="pos61" class="pos"></div>
+            </div>
+            <div class="row">
+                <div id="pos60" class="pos"></div>
+                <div id="pos59" class="pos"></div>
+                <div id="pos58" class="pos"></div>
+                <div id="pos57" class="pos"></div>
+                <div id="pos56" class="pos"><img class="snake" id="snake56-53" src="./assets/snake56-53.png" alt="">
+                </div>
+                <div id="pos55" class="pos"></div>
+                <div id="pos54" class="pos"></div>
+                <div id="pos53" class="pos"></div>
+                <div id="pos52" class="pos"></div>
+                <div id="pos51" class="pos">
+                    <img class="ladder" id="ladder51-67" src="./assets/ladder51-67.png" alt=""></div>
+            </div>
+            <div class="row">
+                <div id="pos50" class="pos"></div>
+                <div id="pos49" class="pos"><img class="snake" id="snake49-11" src="./assets/snake49-11.png" alt="">
+                </div>
+                <div id="pos48" class="pos"></div>
+                <div id="pos47" class="pos"><img class="snake" id="snake47-26" src="./assets/snake47-26.png" alt="">
+                </div>
+                <div id="pos46" class="pos"></div>
+                <div id="pos45" class="pos"></div>
+                <div id="pos44" class="pos"></div>
+                <div id="pos43" class="pos"></div>
+                <div id="pos42" class="pos"></div>
+                <div id="pos41" class="pos"></div>
+            </div>
+            <div class="row">
+                <div id="pos40" class="pos"><img class="ladder" id="ladder40-42" src="./assets/ladder40-42.png" alt="">
+                </div>
+                <div id="pos39" class="pos"></div>
+                <div id="pos38" class="pos"></div>
+                <div id="pos37" class="pos"></div>
+                <div id="pos36" class="pos">
+                    <img class="ladder" id="ladder36-44" src="./assets/ladder36-44.png" alt="">
+                </div>
+                <div id="pos35" class="pos"></div>
+                <div id="pos34" class="pos"></div>
+                <div id="pos33" class="pos"></div>
+                <div id="pos32" class="pos"></div>
+                <div id="pos31" class="pos"></div>
+            </div>
+            <div class="row">
+                <div id="pos30" class="pos"></div>
+                <div id="pos29" class="pos"></div>
+                <div id="pos28" class="pos">
+                    <img class="ladder" id="ladder28-84" src="./assets/ladder28-84.png" alt="">
+                </div>
+                <div id="pos27" id="pos" class="pos"></div>
+                <div id="pos26" class="pos"></div>
+                <div id="pos25" class="pos"></div>
+                <div id="pos24" class="pos"></div>
+                <div id="pos23" class="pos"></div>
+                <div id="pos22" class="pos"></div>
+                <div id="pos21" class="pos"></div>
+            </div>
+            <div class="row">
+                <div id="pos20" class="pos"></div>
+                <div id="pos19" class="pos"></div>
+                <div id="pos18" class="pos"></div>
+                <div id="pos17" class="pos"></div>
+                <div id="pos16" class="pos"><img class="snake" id="snake16-6" src="./assets/snake16-6.png" alt=""></div>
+                <div id="pos15" class="pos"></div>
+                <div id="pos14" class="pos"></div>
+                <div id="pos13" class="pos"></div>
+                <div id="pos12" class="pos"></div>
+                <div id="pos11" class="pos"></div>
+            </div>
+            <div class="row">
+                <div id="pos10" class="pos"></div>
+                <div id="pos9" class="pos"><img class="ladder" id="ladder9-31" src="./assets/ladder9-31.png" alt="">
+                </div>
+                <div id="pos8" class="pos"></div>
+                <div id="pos7" class="pos"></div>
+                <div id="pos6" class="pos"></div>
+                <div id="pos5" class="pos"><img class="ladder" id="ladder5-14" src="./assets/ladder5-14.png" alt="">
+                </div>
+                <div id="pos4" class="pos"></div>
+                <div id="pos3" class="pos"></div>
+                <div id="pos2" class="pos"><img class="ladder" id="ladder2-38" src="./assets/ladder2-38.png" alt="">
+                </div>
+                <div id="pos1" class="pos">
+                </div>
+            </div>
+        </div>
+
+        <div id="dice-container" class="side">
+            <h2>Click to roll!</h2>
+            <img id="dice" src="./assets/dice1.png" alt="">
+        </div>
+    </main>
+</body>
+
+</html>
