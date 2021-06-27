@@ -1,8 +1,8 @@
-# Snakes and Ladders 🐍
+# Snakes and Ladders 🐍 
 
-[Github Pages](https://anabrd.github.io/snakes-and-ladders/index.html)
+[Deployment](https://anabrd.github.io/snakes-and-ladders/index.html)
 
-## Practice
+## Key Points
 - CSS typography, grid layout, positioning
 - DOM manipulation
 - Events/event bubbling and capturing
