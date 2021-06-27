@@ -40,7 +40,7 @@ function checkDice(callback, playingNow) {
     } else if (changeCheck(players[currentPlayer].position)) {
         if (checkGameOver(newPos)) {
             messageBottom = `<p>${players[currentPlayer].name} wins.</p>`;
-            displayBoard(currentPlayer, messageTop, messageBottom, true);
+            displayBoard(currentPlayer, messageTop, "", true);
         } else {
             players[playingNow].position = newPos;
             messageTop = `<p>${players[currentPlayer].name} rolled ${diceNum} and stepped on a ${steppedOn}! Move to position ${newPos}.</p>`;
@@ -51,13 +51,14 @@ function checkDice(callback, playingNow) {
     } else {
         if (checkGameOver(players[currentPlayer].position)) {
             messageBottom = `<p>${players[currentPlayer].name} wins.</p>`;
-            displayBoard(currentPlayer, messageTop, messageBottom, true);
+            displayBoard(currentPlayer, messageTop, "", true);
         } else {
             if (diceNum < 6) {
                 playerEndCheck(currentPlayer);
                 messageBottom = `<p>It's ${players[currentPlayer].name}'s turn now.</p>`;
                 displayBoard(currentPlayer, messageTop, messageBottom, false);
             } else {
+                messageBottom = `<p>It's ${players[currentPlayer].name}'s turn again.</p>`;
                 displayBoard(currentPlayer, messageTop, messageBottom, false);
             }
         }

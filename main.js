@@ -1,21 +1,7 @@
-// TODO: Blank input check, player card animation, single check function for legit input
-
 let playerNumberContainer = document.getElementById("player-number-container");
 let playerCustomizationBtn = document.getElementById("player-customization-btn");
 let players = [];
 let playerNumber;
-
-function generatePieces() {
-    let colorList = ["red", "blue", "green", "yellow"];
-    let choiceLiElements = "";
-
-    for (let index = 0; index < colorList.length; index++) {
-        const element = colorList[index];
-        choiceLiElements += `<li><img class="${element}" src="./assets/piece-${element}.png"></li>`
-    }
-
-    return choiceLiElements;
-}
 
 function playerCustomizationCardGenerator(index) {
     return `<div id="player${index}-card" class="content player-card">
@@ -23,17 +9,41 @@ function playerCustomizationCardGenerator(index) {
                     <label for="player${index}-name">
                         Player ${index}, type your name:
                     </label>
-                    <input class="player-name" type="text" id="player${index}-name" required>
+                    <input class="player-name" type="text" id="player${index}-name" onChange="insertName(event, ${index})"required>
                 </div>
                 <div class="color">
                     <label for="player${index}-color">
                         Click to select color:
                     </label>
                     <ul id="player${index}-color">
-                        ${generatePieces()}
+                        <li><img class="red" src="./assets/piece-red.png" onClick="selectColor(${index}, 'red')"></li>
+                        <li><img class="blue" src="./assets/piece-blue.png" onClick="selectColor(${index}, 'blue')"></li>
+                        <li><img class="green" src="./assets/piece-green.png" onClick="selectColor(${index}, 'green')"></li>
+                        <li><img class="yellow" src="./assets/piece-yellow.png" onClick="selectColor(${index}, 'yellow')"></li>
                     </ul>
                 </div>
-                </div>`
+            </div>`
+}
+
+function selectColor(index, color) {
+    if (!players[index-1]) {
+        players.push({color});
+    } else {
+        players[index-1].color = color
+    }
+    
+    console.log(players)
+}
+
+function insertName(e, index) {
+    let name = e.target.value
+
+    if (!players[index-1]) {
+        players.push({name});
+    } else {
+        players[index-1].name = name
+    }
+    console.log("Players in name func", players);
 }
 
 function playerCustomization() {
@@ -58,68 +68,70 @@ function playerCustomization() {
             document.getElementById(`player${i}-card`).insertAdjacentHTML("beforeend", `<a href="#player${i+1}-card"/>Next</a>`)
         }
         document.querySelector("body").innerHTML += `<button id="to-game-btn" class="button">Start Game!</button>`
-        document.getElementById("to-game-btn").addEventListener("click", () => toGame(isSameColor, tooFewPlayers));
+        document.getElementById("to-game-btn").addEventListener("click", () => toGame(colorCheck, playerNumCheck, nameCheck));
     }
 
     const uls = document.querySelectorAll("li");
     for (let i = 0; i < uls.length; i++) {
         const element = uls[i];
         element.addEventListener("click", function (e) {
-
             let list = e.target.parentElement.parentElement;
-            console.log(list.children)
-
             for (let i = 0; i < list.children.length; i++) {
                 let piece = list.children[i];
-                console.log(piece)
                 if (piece.firstChild.classList.contains("animated")) {
                     console.log(piece.firstChild.classList.contains("animated"))
                     piece.firstChild.classList.remove("animated");
                 }
             }
-
             e.target.classList.add("animated");
-            let player = {};
-            let playerColor = e.target.classList[0];
-            let playerID = e.target.parentElement.parentElement.id.slice(6, 7);
-            let playerName = document.getElementById(`player${playerID}-name`).value;
-            if (!players[playerID - 1]) {
-                player["name"] = playerName;
-                player["color"] = playerColor;
-                players.push(player);
-            } else {
-                players[playerID - 1].color = playerColor;
-            }
-
         })
     }
 }
 
-function isSameColor() {
+function colorCheck() {
     let colors = [];
-    for (const index in players) {
-        colors.push(players[index].color);
+    for (const player of players) {
+        colors.push(player.color);
+        if (player.color == undefined) {
+            return true;
+        }
     }
 
-    if (colors.length == new Set(colors).size) {
-        return false;
+    colors.sort();
+    for (let i = 0; i < colors.length; i++) {
+        for (let j = i+1; j < colors.length; j++) {
+            if (colors[i] == colors[j]) {
+                return true;
+            }
+        }
     }
 
-    return true;
+    return false;
 }
 
-function tooFewPlayers() {
+function playerNumCheck() {
     if (players.length > 1) {
         return false;
     }
     return true;
 }
 
-function toGame(callback, callback2) {
-    if (callback()) {
+function nameCheck() {
+    for (const player of players) {
+        if (player.name == "") {
+            return true;
+        }
+    }
+    return false;
+}
+
+function toGame(color, name, nameandcolor) {
+    if (color()) {
         alert("Please pick unique colors for each player.");
-    } else if (callback2()) {
+    } else if (name()) {
         alert("Please select name and color for all players.")
+    } else if (nameandcolor()) {
+        alert("Please insert a name for all players.")
     } else {
         console.log(players);
         localStorage.setItem("players", JSON.stringify(players));
